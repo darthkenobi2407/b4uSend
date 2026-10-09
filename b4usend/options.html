@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>b4usend settings</title>
+  <style>
+    body { max-width: 680px; margin: 40px auto; padding: 0 20px; font: 15px Arial, sans-serif; }
+    label { display: block; margin: 18px 0 6px; font-weight: 600; }
+    select, button { padding: 8px; }
+    .row { margin: 14px 0; }
+    #saved { min-height: 20px; color: #267a3a; }
+  </style>
+</head>
+<body>
+  <h1>b4usend settings</h1>
+  <div class="row">
+    <label><input id="enabled" type="checkbox"> Enable analysis</label>
+  </div>
+  <div class="row">
+    <label for="sensitivity">Sensitivity</label>
+    <select id="sensitivity">
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+  </div>
+  <div class="row">
+    <label><input id="notifications" type="checkbox"> Show notifications</label>
+  </div>
+  <button id="save" type="button">Save settings</button>
+  <div id="saved" aria-live="polite"></div>
+  <script src="options.js"></script>
+</body>
+</html>
