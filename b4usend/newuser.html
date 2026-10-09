@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Install b4usend</title>
+  <title>Installing b4usend</title>
 
   <style>
     * {
@@ -14,354 +14,320 @@
 
     body {
       margin: 0;
-      padding: 40px 20px;
-      font-family: Arial, sans-serif;
+      padding: 30px 20px;
       background: #0b0b0b;
-      color: #f5f5f5;
+      color: #e5e5e5;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
       line-height: 1.7;
     }
 
-    .container {
-      max-width: 760px;
-      margin: auto;
-    }
-
-    .brand {
-      color: #8ab4ff;
-      font-size: 14px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+    main {
+      max-width: 680px;
+      margin: 0 auto;
     }
 
     h1 {
-      font-size: clamp(32px, 6vw, 48px);
-      line-height: 1.15;
-      margin: 12px 0;
-    }
-
-    .subtitle {
-      color: #aaa;
-      font-size: 17px;
-      margin-bottom: 32px;
-    }
-
-    .card {
-      background: #151515;
-      border: 1px solid #292929;
-      border-radius: 14px;
-      padding: 24px;
-      margin: 22px 0;
+      font-size: 30px;
+      margin-bottom: 5px;
+      color: #fff;
     }
 
     h2 {
-      margin-top: 0;
-      font-size: 23px;
-    }
-
-    h3 {
-      font-size: 17px;
-      margin-bottom: 6px;
+      font-size: 20px;
+      margin-top: 30px;
+      color: #fff;
     }
 
     p {
-      color: #c9c9c9;
+      color: #bdbdbd;
     }
 
     a {
       color: #8ab4ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .brand {
+      color: #8ab4ff;
+      font-weight: bold;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .intro {
+      margin-bottom: 25px;
+    }
+
+    .try-analyzer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 14px 0;
+      margin: 18px 0;
+      border-top: 1px solid #292929;
+      border-bottom: 1px solid #292929;
+    }
+
+    .try-analyzer span {
+      color: #bdbdbd;
+    }
+
+    .try-analyzer a {
+      font-weight: bold;
     }
 
     .step {
-      display: flex;
-      align-items: flex-start;
-      gap: 15px;
-      margin: 25px 0;
+      margin: 22px 0;
+    }
+
+    .step h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+      color: #f5f5f5;
+    }
+
+    .step p {
+      margin-top: 5px;
     }
 
     .number {
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: #8ab4ff;
-      color: #080808;
+      color: #8ab4ff;
       font-weight: bold;
-    }
-
-    .step-content {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .step-content h3 {
-      margin-top: 2px;
+      margin-right: 6px;
     }
 
     code {
-      background: #242424;
-      color: #d6e4ff;
-      padding: 3px 7px;
-      border-radius: 5px;
+      background: #202020;
+      padding: 3px 6px;
+      border-radius: 4px;
+      color: #ddd;
       overflow-wrap: anywhere;
     }
 
-    .notice {
-      background: #201c12;
-      border: 1px solid #594723;
-      border-radius: 9px;
-      padding: 14px;
-      margin: 18px 0;
-      color: #e8d5a8;
+    .note {
+      border-left: 3px solid #8ab4ff;
+      padding-left: 12px;
+      margin: 20px 0;
+      color: #bdbdbd;
     }
 
-    .button {
-      display: inline-block;
-      padding: 10px 15px;
-      border-radius: 8px;
-      background: #8ab4ff;
-      color: #080808;
-      font-weight: bold;
-      text-decoration: none;
-      margin: 6px 5px 6px 0;
-      border: none;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .button:hover {
-      background: #b1ceff;
-    }
-
-    .secondary {
-      background: #252525;
+    button {
+      background: #202020;
+      border: 1px solid #383838;
       color: #eee;
-      border: 1px solid #414141;
-    }
-
-    .secondary:hover {
-      background: #333;
-    }
-
-    .footer {
-      text-align: center;
-      color: #777;
+      padding: 7px 11px;
+      border-radius: 5px;
+      cursor: pointer;
       font-size: 13px;
-      margin-top: 40px;
     }
 
-    @media (max-width: 480px) {
+    button:hover {
+      background: #2b2b2b;
+    }
+
+    .repo-link {
+      display: inline-block;
+      margin-top: 5px;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #292929;
+      margin: 30px 0;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 13px;
+      color: #777;
+    }
+
+    @media (max-width: 500px) {
       body {
-        padding: 24px 14px;
+        padding: 22px 16px;
       }
 
-      .card {
-        padding: 18px;
-      }
-
-      .step {
-        gap: 11px;
+      h1 {
+        font-size: 26px;
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="container">
+  <main>
     <div class="brand">b4usend</div>
 
-    <h1>Get started with b4usend.</h1>
+    <h1>Getting started</h1>
 
-    <p class="subtitle">
-      A quick step-by-step guide to installing the browser extension
-      and getting it ready to use.
+    <p class="intro">
+      Here's how to install b4usend on your browser.
+      It only takes a couple of minutes.
     </p>
 
-    <section class="card">
-      <h2>Before you begin</h2>
+    <!-- Try the analyzer -->
+    <div class="try-analyzer">
+      <span>Want to try it before installing?</span>
 
-      <p>
-        You'll need the b4usend extension files downloaded to your
-        computer. This guide explains how to load the extension
-        manually in Chrome or Microsoft Edge.
-      </p>
-
-      <a class="button"
-         href="https://github.com/darthkenobi2407/b4uSend">
-        Get b4usend on GitHub ↗
+      <a
+        href="https://b4usend-qenpyg27w-dk29.vercel.app/popup.html"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Try the analyzer →
       </a>
-
-      <div class="notice">
-        <strong>Important:</strong> Download the repository as a ZIP
-        and extract it first. Opening the GitHub page or hosting the
-        HTML files on a website does not install the browser extension.
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>Installing on Google Chrome</h2>
-
-      <div class="step">
-        <div class="number">1</div>
-        <div class="step-content">
-          <h3>Download the files</h3>
-          <p>
-            Open the GitHub repository, click the green
-            <strong>Code</strong> button, and select
-            <strong>Download ZIP</strong>.
-          </p>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="number">2</div>
-        <div class="step-content">
-          <h3>Extract the ZIP</h3>
-          <p>
-            Find the downloaded ZIP file and extract it.
-            Open the folders until you find the extension's
-            <code>manifest.json</code> file.
-          </p>
-          <p>
-            In this repository, the extension's main folder is
-            expected to be <code>b4usend</code>. Select the folder
-            containing <code>manifest.json</code>, not the
-            <code>src</code> folder.
-          </p>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="number">3</div>
-        <div class="step-content">
-          <h3>Open Chrome's extension manager</h3>
-          <p>
-            Enter this address into Chrome's address bar:
-          </p>
-          <p><code>chrome://extensions</code></p>
-          <button class="button secondary"
-                  onclick="copyText('chrome://extensions')">
-            Copy address
-          </button>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="number">4</div>
-        <div class="step-content">
-          <h3>Turn on Developer mode</h3>
-          <p>
-            Find the <strong>Developer mode</strong> switch near
-            the top-right corner of the extensions page and turn it on.
-          </p>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="number">5</div>
-        <div class="step-content">
-          <h3>Load b4usend</h3>
-          <p>
-            Click <strong>Load unpacked</strong>, select the extracted
-            extension folder containing <code>manifest.json</code>,
-            and confirm your selection.
-          </p>
-          <p>
-            If Chrome displays an error, check the error details on
-            the extension card. The manifest and referenced file paths
-            must be valid.
-          </p>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="number">6</div>
-        <div class="step-content">
-          <h3>Pin the extension</h3>
-          <p>
-            Click the puzzle-piece icon in Chrome's toolbar. Find
-            b4usend and click the pin icon to keep it visible.
-          </p>
-          <p>
-            Click the b4usend icon to open its popup.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>Installing on Microsoft Edge</h2>
-
-      <div class="step">
-        <div class="number">1</div>
-        <div class="step-content">
-          <h3>Open Edge extensions</h3>
-          <p>Enter <code>edge://extensions</code> in the address bar.</p>
-          <button class="button secondary"
-                  onclick="copyText('edge://extensions')">
-            Copy address
-          </button>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="number">2</div>
-        <div class="step-content">
-          <h3>Enable Developer mode</h3>
-          <p>
-            Turn on Developer mode on the extensions page.
-          </p>
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="number">3</div>
-        <div class="step-content">
-          <h3>Load the extension</h3>
-          <p>
-            Click <strong>Load unpacked</strong> and select the
-            extracted b4usend folder containing
-            <code>manifest.json</code>.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2>You're all set.</h2>
-
-      <p>
-        Once the extension has loaded successfully, open it from your
-        browser toolbar. If b4usend includes configurable settings,
-        open its extension details or options page to customize them.
-      </p>
-
-      <p>
-        Need to check the source files again?
-      </p>
-
-      <a class="button"
-         href="https://github.com/darthkenobi2407/b4uSend">
-        Visit GitHub repository ↗
-      </a>
-    </section>
-
-    <div class="footer">
-      b4usend · Installation guide
     </div>
+
+    <p>
+      <a
+        class="repo-link"
+        href="https://github.com/darthkenobi2407/b4uSend"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Get the files from GitHub →
+      </a>
+    </p>
+
+    <div class="note">
+      You'll need a computer for this. The instructions below use
+      Chrome or Microsoft Edge and install the extension manually.
+    </div>
+
+    <h2>1. Download the extension</h2>
+
+    <div class="step">
+      <p>
+        Open the GitHub link above, click the green
+        <strong>Code</strong> button and choose
+        <strong>Download ZIP</strong>.
+      </p>
+
+      <p>
+        Once it's downloaded, extract the ZIP file.
+        Open the folders until you find <code>manifest.json</code>.
+      </p>
+
+      <p>
+        That's the folder you'll need in the next steps.
+        Don't select the <code>src</code> folder unless it contains
+        the extension's manifest.
+      </p>
+    </div>
+
+    <hr>
+
+    <h2>2. Add it to Chrome</h2>
+
+    <div class="step">
+      <h3><span class="number">01.</span> Open extensions</h3>
+
+      <p>
+        Type <code>chrome://extensions</code> into your address bar.
+      </p>
+
+      <button
+        type="button"
+        onclick="copyAddress('chrome://extensions')"
+      >
+        Copy address
+      </button>
+    </div>
+
+    <div class="step">
+      <h3><span class="number">02.</span> Turn on Developer mode</h3>
+
+      <p>
+        Find the Developer mode switch in the top-right corner
+        and turn it on.
+      </p>
+    </div>
+
+    <div class="step">
+      <h3><span class="number">03.</span> Load b4usend</h3>
+
+      <p>
+        Click <strong>Load unpacked</strong>, select the folder
+        containing <code>manifest.json</code> and confirm.
+      </p>
+
+      <p>
+        If it loads without errors, you're good to go.
+      </p>
+    </div>
+
+    <div class="step">
+      <h3><span class="number">04.</span> Pin it</h3>
+
+      <p>
+        Click the puzzle-piece icon next to Chrome's address bar
+        and pin b4usend so it's easy to find.
+      </p>
+    </div>
+
+    <hr>
+
+    <h2>Using Microsoft Edge?</h2>
+
+    <p>
+      The process is almost the same. Open
+      <code>edge://extensions</code>, enable Developer mode,
+      click <strong>Load unpacked</strong> and select the same
+      extension folder.
+    </p>
+
+    <button
+      type="button"
+      onclick="copyAddress('edge://extensions')"
+    >
+      Copy Edge address
+    </button>
+
+    <hr>
+
+    <h2>That's it.</h2>
+
+    <p>
+      Click the b4usend icon in your browser to open it.
+      If something goes wrong, check the error shown on the
+      browser's extensions page.
+    </p>
+
+    <p>
+      Still stuck?
+      <a
+        href="https://github.com/darthkenobi2407/b4uSend"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Check the repository →
+      </a>
+    </p>
+
+    <footer>
+      b4usend · Installation guide
+    </footer>
   </main>
 
   <script>
-    function copyText(text) {
+    function copyAddress(address) {
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text)
-          .then(() => alert('Copied! Paste it into your browser address bar.'))
-          .catch(() => window.prompt('Copy this address:', text));
+        navigator.clipboard.writeText(address)
+          .then(() => {
+            alert("Copied! Paste it into your address bar.");
+          })
+          .catch(() => {
+            window.prompt("Copy this address:", address);
+          });
       } else {
-        window.prompt('Copy this address:', text);
+        window.prompt("Copy this address:", address);
       }
     }
   </script>
