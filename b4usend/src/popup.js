@@ -1,20 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const status = document.getElementById('analyzerStatus');
+  
   const input = document.getElementById('testInput');
   const button = document.getElementById('testBtn');
   const results = document.getElementById('testResults');
 
   const analyzer = window.b4usendAnalyzer;
 
-  if (analyzer && typeof analyzer.analyzeMessage === 'function') {
-    status.textContent = 'Analyzer ready';
-    status.className = 'status analyzer-ready';
-  } else {
-    status.textContent = 'Analyzer unavailable';
-    status.className = 'status analyzer-error';
-    button.disabled = true;
-  }
-
+ 
   function render(result) {
     results.textContent = '';
 
