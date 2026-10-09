@@ -1,35 +1,291 @@
-<!doctype html>
+```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>b4usend settings</title>
+
   <style>
-    body { max-width: 680px; margin: 40px auto; padding: 0 20px; font: 15px Arial, sans-serif; }
-    label { display: block; margin: 18px 0 6px; font-weight: 600; }
-    select, button { padding: 8px; }
-    .row { margin: 14px 0; }
-    #saved { min-height: 20px; color: #267a3a; }
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 30px 20px;
+      background: #0b0b0b;
+      color: #e5e5e5;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 5px;
+      color: #fff;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-top: 30px;
+      color: #fff;
+    }
+
+    p {
+      color: #bdbdbd;
+    }
+
+    a {
+      color: #8ab4ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .brand {
+      color: #8ab4ff;
+      font-weight: bold;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .intro {
+      margin-bottom: 25px;
+      color: #bdbdbd;
+    }
+
+    .try-analyzer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 14px 0;
+      margin: 18px 0;
+      border-top: 1px solid #292929;
+      border-bottom: 1px solid #292929;
+    }
+
+    .try-analyzer span {
+      color: #bdbdbd;
+    }
+
+    .try-analyzer a {
+      font-weight: bold;
+    }
+
+    .settings-section {
+      margin-top: 28px;
+    }
+
+    .row {
+      margin: 20px 0;
+      padding: 16px;
+      background: #111;
+      border: 1px solid #292929;
+      border-radius: 7px;
+    }
+
+    .row label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #f5f5f5;
+    }
+
+    .row p {
+      margin: 5px 0 0;
+      font-size: 13px;
+      color: #929292;
+    }
+
+    .checkbox-label {
+      display: flex !important;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      margin: 0 !important;
+    }
+
+    input[type="checkbox"] {
+      width: 17px;
+      height: 17px;
+      accent-color: #8ab4ff;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    select {
+      width: 100%;
+      max-width: 100%;
+      padding: 10px;
+      background: #202020;
+      color: #eee;
+      border: 1px solid #383838;
+      border-radius: 5px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    select:focus {
+      border-color: #8ab4ff;
+    }
+
+    button {
+      background: #202020;
+      border: 1px solid #383838;
+      color: #eee;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.15s ease;
+    }
+
+    button:hover {
+      background: #2b2b2b;
+    }
+
+    #save {
+      margin-top: 5px;
+      background: #8ab4ff;
+      border-color: #8ab4ff;
+      color: #0b0b0b;
+      font-weight: bold;
+    }
+
+    #save:hover {
+      background: #a6c7ff;
+    }
+
+    #saved {
+      min-height: 24px;
+      margin-top: 12px;
+      color: #8ab4ff;
+      font-size: 14px;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #292929;
+      margin: 30px 0;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 13px;
+      color: #777;
+    }
+
+    @media (max-width: 500px) {
+      body {
+        padding: 22px 16px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .row {
+        padding: 13px;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <h1>b4usend settings</h1>
-  <div class="row">
-    <label><input id="enabled" type="checkbox"> Enable analysis</label>
-  </div>
-  <div class="row">
-    <label for="sensitivity">Sensitivity</label>
-    <select id="sensitivity">
-      <option value="low">Low</option>
-      <option value="medium">Medium</option>
-      <option value="high">High</option>
-    </select>
-  </div>
-  <div class="row">
-    <label><input id="notifications" type="checkbox"> Show notifications</label>
-  </div>
-  <button id="save" type="button">Save settings</button>
-  <div id="saved" aria-live="polite"></div>
+  <main>
+    <div class="brand">b4usend</div>
+
+    <h1>Settings</h1>
+
+    <p class="intro">
+      Customize how b4usend analyzes your messages.
+      Change the options below to suit your preferences.
+    </p>
+
+    <div class="try-analyzer">
+      <span>Want to try the analyzer?</span>
+
+      <a
+        href="https://b4usend-qenpyg27w-dk29.vercel.app/popup.html"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Try the analyzer →
+      </a>
+    </div>
+
+    <div class="settings-section">
+      <h2>General</h2>
+
+      <div class="row">
+        <label class="checkbox-label" for="enabled">
+          <input id="enabled" type="checkbox">
+          Enable analysis
+        </label>
+
+        <p>
+          Turn message analysis on or off.
+        </p>
+      </div>
+
+      <div class="row">
+        <label for="sensitivity">Sensitivity</label>
+
+        <select id="sensitivity">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+
+        <p>
+          Choose how sensitive the analyzer should be when
+          identifying communication signals.
+        </p>
+      </div>
+
+      <div class="row">
+        <label class="checkbox-label" for="notifications">
+          <input id="notifications" type="checkbox">
+          Show notifications
+        </label>
+
+        <p>
+          Choose whether b4usend can show notifications.
+        </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>Save your changes</h2>
+
+    <p>
+      Once you've adjusted your preferences, save them to apply
+      your settings.
+    </p>
+
+    <button id="save" type="button">Save settings</button>
+
+    <div id="saved" aria-live="polite"></div>
+
+    <footer>
+      b4usend · Settings
+    </footer>
+  </main>
+
   <script src="options.js"></script>
 </body>
 </html>
+```
