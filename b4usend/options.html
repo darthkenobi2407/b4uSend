@@ -1,35 +1,360 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>b4usend settings</title>
+  <title>b4usend settings & installation</title>
+
   <style>
-    body { max-width: 680px; margin: 40px auto; padding: 0 20px; font: 15px Arial, sans-serif; }
-    label { display: block; margin: 18px 0 6px; font-weight: 600; }
-    select, button { padding: 8px; }
-    .row { margin: 14px 0; }
-    #saved { min-height: 20px; color: #267a3a; }
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      max-width: 760px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font: 15px/1.6 Arial, sans-serif;
+      color: #202124;
+      background: #f8f9fa;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.3;
+    }
+
+    h1 {
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #5f6368;
+      margin-top: 0;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #dadce0;
+      border-radius: 12px;
+      padding: 22px;
+      margin: 24px 0;
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      margin: 22px 0;
+      align-items: flex-start;
+    }
+
+    .number {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #1769e0;
+      color: white;
+      font-weight: bold;
+    }
+
+    .step-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .step-content h3 {
+      margin: 3px 0 6px;
+    }
+
+    .step-content p {
+      margin: 5px 0 10px;
+    }
+
+    .note {
+      background: #eef4ff;
+      border-left: 4px solid #1769e0;
+      padding: 12px 14px;
+      border-radius: 4px;
+      margin: 16px 0;
+    }
+
+    .warning {
+      background: #fff6e5;
+      border-left: 4px solid #d99000;
+      padding: 12px 14px;
+      border-radius: 4px;
+      margin: 16px 0;
+    }
+
+    code {
+      background: #f1f3f4;
+      padding: 2px 6px;
+      border-radius: 4px;
+      overflow-wrap: anywhere;
+    }
+
+    .browser-links a {
+      display: inline-block;
+      margin: 5px 8px 5px 0;
+      color: #1769e0;
+      font-weight: 600;
+    }
+
+    label {
+      display: block;
+      margin: 18px 0 6px;
+      font-weight: 600;
+    }
+
+    select, button {
+      padding: 10px 12px;
+      font: inherit;
+      border-radius: 6px;
+    }
+
+    select {
+      border: 1px solid #aaa;
+      background: white;
+    }
+
+    button {
+      cursor: pointer;
+      border: 0;
+      background: #1769e0;
+      color: white;
+      font-weight: 600;
+    }
+
+    button:hover {
+      background: #0d55bd;
+    }
+
+    .row {
+      margin: 14px 0;
+    }
+
+    .row label {
+      font-weight: normal;
+      margin: 8px 0;
+    }
+
+    #saved {
+      min-height: 24px;
+      margin-top: 10px;
+      color: #267a3a;
+    }
+
+    footer {
+      color: #666;
+      font-size: 13px;
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    @media (max-width: 500px) {
+      body {
+        margin: 20px auto;
+        padding: 0 14px;
+      }
+
+      .card {
+        padding: 16px;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <h1>b4usend settings</h1>
-  <div class="row">
-    <label><input id="enabled" type="checkbox"> Enable analysis</label>
-  </div>
-  <div class="row">
-    <label for="sensitivity">Sensitivity</label>
-    <select id="sensitivity">
-      <option value="low">Low</option>
-      <option value="medium">Medium</option>
-      <option value="high">High</option>
-    </select>
-  </div>
-  <div class="row">
-    <label><input id="notifications" type="checkbox"> Show notifications</label>
-  </div>
-  <button id="save" type="button">Save settings</button>
-  <div id="saved" aria-live="polite"></div>
+  <h1>b4usend</h1>
+  <p class="subtitle">Extension settings and installation guide</p>
+
+  <section class="card">
+    <h2>Install b4usend</h2>
+    <p>
+      Follow the instructions below to install b4usend in a
+      Chromium-based browser.
+    </p>
+
+    <div class="note">
+      <strong>Before you start:</strong>
+      You need the extension's actual files on your computer.
+      A GitHub repository or a Vercel website URL is not itself
+      an installed browser extension.
+    </div>
+
+    <h3>Google Chrome</h3>
+
+    <div class="step">
+      <div class="number">1</div>
+      <div class="step-content">
+        <h3>Download the extension</h3>
+        <p>
+          Open the b4usend GitHub repository and download the
+          project files using the Code button, then Download ZIP.
+        </p>
+        <p>
+          <a href="https://github.com/darthkenobi2407/b4uSend"
+             target="_blank" rel="noopener noreferrer">
+            Open b4usend on GitHub →
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="number">2</div>
+      <div class="step-content">
+        <h3>Extract the ZIP file</h3>
+        <p>
+          Find the downloaded ZIP file on your computer, right-click
+          it, and select Extract All.
+        </p>
+        <p>
+          Open the extracted folders until you find
+          <code>manifest.json</code>.
+        </p>
+        <div class="warning">
+          Select the <strong>b4usend</strong> folder containing
+          <code>manifest.json</code>, not the outer GitHub repository
+          folder and not the <code>src</code> folder.
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="number">3</div>
+      <div class="step-content">
+        <h3>Open Chrome Extensions</h3>
+        <p>
+          Type this into Chrome's address bar:
+        </p>
+        <p><code>chrome://extensions</code></p>
+        <button type="button"
+                onclick="copyAddress('chrome://extensions')">
+          Copy Chrome extensions address
+        </button>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="number">4</div>
+      <div class="step-content">
+        <h3>Enable Developer mode</h3>
+        <p>
+          Turn on the <strong>Developer mode</strong> switch near
+          the top-right corner of the Extensions page.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="number">5</div>
+      <div class="step-content">
+        <h3>Load the extension</h3>
+        <p>
+          Click <strong>Load unpacked</strong>. Select the extracted
+          <code>b4usend</code> folder containing
+          <code>manifest.json</code>, then click Select Folder.
+        </p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="number">6</div>
+      <div class="step-content">
+        <h3>Pin b4usend</h3>
+        <p>
+          Click Chrome's puzzle-piece Extensions icon, find b4usend,
+          and click the pin icon if you want it visible in your toolbar.
+        </p>
+      </div>
+    </div>
+
+    <h3>Microsoft Edge</h3>
+
+    <div class="step">
+      <div class="number">1</div>
+      <div class="step-content">
+        <h3>Open the Extensions page</h3>
+        <p><code>edge://extensions</code></p>
+        <button type="button"
+                onclick="copyAddress('edge://extensions')">
+          Copy Edge extensions address
+        </button>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="number">2</div>
+      <div class="step-content">
+        <h3>Load b4usend</h3>
+        <p>
+          Turn on <strong>Developer mode</strong>, click
+          <strong>Load unpacked</strong>, and select the extracted
+          <code>b4usend</code> folder containing
+          <code>manifest.json</code>.
+        </p>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>Having trouble?</strong>
+      If the browser displays an error, open the extension's card
+      on the Extensions page and read the error details. The extension
+      may need its manifest or permissions corrected before it can run.
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>b4usend settings</h2>
+
+    <div class="row">
+      <label>
+        <input id="enabled" type="checkbox">
+        Enable analysis
+      </label>
+    </div>
+
+    <div class="row">
+      <label for="sensitivity">Sensitivity</label>
+      <select id="sensitivity">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label>
+        <input id="notifications" type="checkbox">
+        Show notifications
+      </label>
+    </div>
+
+    <button id="save" type="button">Save settings</button>
+    <div id="saved" aria-live="polite"></div>
+  </section>
+
+  <footer>
+    b4usend · Extension setup and preferences
+  </footer>
+
+  <script>
+    function copyAddress(address) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(address)
+          .then(() => alert("Copied! Paste it into your browser address bar."))
+          .catch(() => prompt("Copy this address:", address));
+      } else {
+        prompt("Copy this address:", address);
+      }
+    }
+  </script>
+
   <script src="options.js"></script>
 </body>
 </html>
+```
